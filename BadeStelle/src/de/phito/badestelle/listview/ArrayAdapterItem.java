@@ -10,12 +10,28 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ArrayAdapterItem.
+ */
 public class ArrayAdapterItem extends ArrayAdapter<ListItemData> {
 	 
+    /** The m context. */
     Context mContext;
+    
+    /** The layout resource id. */
     int layoutResourceId;
+    
+    /** The data. */
     ListItemData data[] = null;
  
+    /**
+     * Instantiates a new array adapter item.
+     *
+     * @param mContext the m context
+     * @param layoutResourceId the layout resource id
+     * @param data the data
+     */
     public ArrayAdapterItem(Context mContext, int layoutResourceId, ListItemData[] data) {
  
         super(mContext, layoutResourceId, data);
@@ -25,6 +41,9 @@ public class ArrayAdapterItem extends ArrayAdapter<ListItemData> {
         this.data = data;
     }
  
+    /* (non-Javadoc)
+     * @see android.widget.ArrayAdapter#getView(int, android.view.View, android.view.ViewGroup)
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
          if(convertView==null){

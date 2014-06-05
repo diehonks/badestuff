@@ -14,14 +14,28 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import de.phito.badestelle.R;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MapFragment.
+ */
 public class MapFragment extends Fragment {
+		
+		/** The Constant BADE_STELLEN_COORDINATES_LAT. */
 		public static final String BADE_STELLEN_COORDINATES_LAT = "BADE_STELLEN_COORDINATES_LAT";
+		
+		/** The Constant BADE_STELLEN_COORDINATES_LON. */
 		public static final String BADE_STELLEN_COORDINATES_LON = "BADE_STELLEN_COORDINATES_LON";
 
+		/**
+		 * Instantiates a new map fragment.
+		 */
 		public MapFragment() {
 			
 		}
 
+		/* (non-Javadoc)
+		 * @see android.support.v4.app.Fragment#onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+		 */
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_detail_map, container, false);
