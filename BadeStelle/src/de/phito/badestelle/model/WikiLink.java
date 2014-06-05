@@ -1,15 +1,35 @@
 package de.phito.badestelle.model;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class WikiLink.
+ */
 class WikiLink{
+	
+	/** The url. */
 	String url;
+	
+	/** The title. */
 	String title;
 	
+	/**
+	 * Instantiates a new wiki link.
+	 *
+	 * @param url the url
+	 * @param title the title
+	 */
 	public WikiLink(String url, String title) {
 		this.url = "http://www.berlin.de" + url;
 		this.title = title;
 	}
 	
+	/**
+	 * Parses the from string.
+	 *
+	 * @param wikiLink the wiki link
+	 * @return the wiki link
+	 */
 	public static WikiLink parseFromString(String wikiLink){
 		// links are in this wiki format
 		// "[[/badegewaesser/badestellen/alterhof.html|Alter Hof]]"

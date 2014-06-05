@@ -15,16 +15,35 @@ import de.phito.badestelle.jsonparser.JSONDefinitions.BadeStellenJSONContainer;
 import android.content.Context;
 import android.content.res.AssetManager;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BadeStellenContainer.
+ */
 public class BadeStellenContainer {
+	
+	/** The logger. */
 	Logger logger = Logger.getLogger(BadeStellenContainer.class.getSimpleName());
+	
+	/** The badestellen. */
 	private List<BadeStelle> badestellen;
+	
+	/** The Constant BADESTELLEN_JSON. */
 	private static final String BADESTELLEN_JSON = "Badewasser_utf8.json";
 	
+	/**
+	 * Instantiates a new bade stellen container.
+	 */
 	private BadeStellenContainer(){
 	}
 
+	/** The instance. */
 	private static BadeStellenContainer instance;
 	
+	/**
+	 * Gets the single instance of BadeStellenContainer.
+	 *
+	 * @return single instance of BadeStellenContainer
+	 */
 	public static BadeStellenContainer getInstance(){
 		if(instance == null){
 			instance = new BadeStellenContainer();
@@ -33,6 +52,13 @@ public class BadeStellenContainer {
 		
 	}
 	
+	/**
+	 * Read file.
+	 *
+	 * @param context the context
+	 * @param filename the filename
+	 * @return the string builder
+	 */
 	private StringBuilder readFile(Context context, String filename){
 		logger.info("loading json file...");
 		StringBuilder stringBuilder = new StringBuilder();
@@ -68,6 +94,11 @@ public class BadeStellenContainer {
 	    return stringBuilder;
 	}
 	
+	/**
+	 * Load bade stellen json.
+	 *
+	 * @param context the context
+	 */
 	public void loadBadeStellenJSON(Context context){
 		if(this.badestellen == null){
 			badestellen = new ArrayList<BadeStelle>();	
@@ -77,6 +108,12 @@ public class BadeStellenContainer {
 		}
 	}
 	
+	/**
+	 * Gets the bade stelle by id.
+	 *
+	 * @param id the id
+	 * @return the bade stelle by id
+	 */
 	public BadeStelle getBadeStelleById(int id){
 		for(BadeStelle bs: this.badestellen){
 			if(bs.id == id){
@@ -86,6 +123,11 @@ public class BadeStellenContainer {
 		return null;
 	}
 
+	/**
+	 * Parses the file.
+	 *
+	 * @param sb the sb
+	 */
 	private void parseFile(StringBuilder sb) {
 		Gson gson = new Gson();
 		BadeStellenJSONContainer badeStellenJson = gson.fromJson(sb.toString(), BadeStellenJSONContainer.class);
@@ -94,6 +136,11 @@ public class BadeStellenContainer {
 		}
 	}
 	
+	/**
+	 * Gets the badestellen.
+	 *
+	 * @return the badestellen
+	 */
 	public List<BadeStelle> getBadestellen() {
 		return badestellen;
 	}
