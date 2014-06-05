@@ -144,4 +144,9 @@ public class BadeStellenContainer {
 	public List<BadeStelle> getBadestellen() {
 		return badestellen;
 	}
+
+	@Override
+	public String toString() {
+		return "BadeStellenContainer [badestellen=" + badestellen + "]";
+	}
 }

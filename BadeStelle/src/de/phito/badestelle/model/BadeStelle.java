@@ -9,20 +9,51 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import de.phito.badestelle.jsonparser.JSONDefinitions;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BadeStelle.
+ */
 @SuppressLint("SimpleDateFormat")
 public class BadeStelle {
+	
+	/** The logger. */
 	private Logger logger = Logger.getLogger(BadeStelle.class.getSimpleName());
+	
+	/** The link. */
 	public final WikiLink link;
+	
+	/** The name. */
 	public final String name;
+	
+	/** The district. */
 	public final String district;
+	
+	/** The coordinates. */
 	public final Coordinates coordinates;
+	
+	/** The last update. */
 	public Date lastUpdate;
+	
+	/** The status color. */
 	public int statusColor;
+	
+	/** The enterokokken per deci liter. */
 	public final int enterokokkenPerDeciLiter;
+	
+	/** The ecoli per deci liter. */
 	public int ecoliPerDeciLiter;
+	
+	/** The view depth cm. */
 	public final int viewDepthCM;
+	
+	/** The id. */
 	public int id;
 
+	/**
+	 * Instantiates a new bade stelle.
+	 *
+	 * @param json the json
+	 */
 	public BadeStelle(JSONDefinitions.BadeStellenJSON json){
 		this.link =  WikiLink.parseFromString(json.badestellelink);
 		this.name = json.badname;
@@ -71,6 +102,82 @@ public class BadeStelle {
 		}
 		this.id = Integer.valueOf(json.id);
 		
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((coordinates == null) ? 0 : coordinates.hashCode());
+		result = prime * result
+				+ ((district == null) ? 0 : district.hashCode());
+		result = prime * result + ecoliPerDeciLiter;
+		result = prime * result + enterokokkenPerDeciLiter;
+		result = prime * result + id;
+		result = prime * result
+				+ ((lastUpdate == null) ? 0 : lastUpdate.hashCode());
+		result = prime * result + ((link == null) ? 0 : link.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + statusColor;
+		result = prime * result + viewDepthCM;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BadeStelle other = (BadeStelle) obj;
+		if (coordinates == null) {
+			if (other.coordinates != null)
+				return false;
+		} else if (!coordinates.equals(other.coordinates))
+			return false;
+		if (district == null) {
+			if (other.district != null)
+				return false;
+		} else if (!district.equals(other.district))
+			return false;
+		if (ecoliPerDeciLiter != other.ecoliPerDeciLiter)
+			return false;
+		if (enterokokkenPerDeciLiter != other.enterokokkenPerDeciLiter)
+			return false;
+		if (id != other.id)
+			return false;
+		if (lastUpdate == null) {
+			if (other.lastUpdate != null)
+				return false;
+		} else if (!lastUpdate.equals(other.lastUpdate))
+			return false;
+		if (link == null) {
+			if (other.link != null)
+				return false;
+		} else if (!link.equals(other.link))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (statusColor != other.statusColor)
+			return false;
+		if (viewDepthCM != other.viewDepthCM)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "BadeStelle [link=" + link + ", name=" + name + ", district="
+				+ district + ", coordinates=" + coordinates + ", lastUpdate="
+				+ lastUpdate + ", statusColor=" + statusColor
+				+ ", enterokokkenPerDeciLiter=" + enterokokkenPerDeciLiter
+				+ ", ecoliPerDeciLiter=" + ecoliPerDeciLiter + ", viewDepthCM="
+				+ viewDepthCM + ", id=" + id + "]";
 	}	
-	
 }
