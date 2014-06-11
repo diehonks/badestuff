@@ -56,6 +56,7 @@ public class DetailActivity extends FragmentActivity implements
 		// Set up the action bar.
 		final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		actionBar.setTitle(this.badeStelle.name);
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the app.

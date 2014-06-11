@@ -62,15 +62,30 @@ public class DescriptionFragment extends Fragment {
 			
 			TextView sichtweite = (TextView) rootView.findViewById(R.id.textSichtweite);
 			int sichtweiteValue = getArguments().getInt(BADE_STELLEN_SICHTWEITE);
-			sichtweite.setText(Integer.toString(sichtweiteValue));
+			if(sichtweiteValue == -1){
+				// -1 means that the value was not available in the source data
+				sichtweite.setText(getResources().getString(R.string.value_not_available));
+			} else {
+				sichtweite.setText(Integer.toString(sichtweiteValue)+" cm");
+			}
 			
 			TextView ecoli = (TextView) rootView.findViewById(R.id.textEcoli);
 			int ecolivalue = getArguments().getInt(BADE_STELLEN_ECOLI);
-			ecoli.setText(Integer.toString(ecolivalue)+" / 100 ml");
+			if(ecolivalue == -1){
+				// -1 means that the value was not available in the source data
+				ecoli.setText(getResources().getString(R.string.value_not_available));
+			} else {
+				ecoli.setText(Integer.toString(ecolivalue)+" / 100 ml");
+			}
 			
 			TextView enterokokken = (TextView) rootView.findViewById(R.id.textEnterokokken);
 			int enterokokkenValue = getArguments().getInt(BADE_STELLEN_ENTEROKOKKEN);
-			enterokokken.setText(Integer.toString(enterokokkenValue)+" / 100 ml");
+			if(enterokokkenValue == -1){
+				// -1 means that the value was not available in the source data
+				enterokokken.setText(getResources().getString(R.string.value_not_available));
+			} else {
+				enterokokken.setText(Integer.toString(enterokokkenValue)+" / 100 ml");
+			}
 			
 			TextView date = (TextView) rootView.findViewById(R.id.textLetzteUberprufung);
 			String datum = getArguments().getString(BADE_STELLEN_DATUM);

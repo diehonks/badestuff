@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">BadeStelle</string>
+    <string name="app_name">Bade Stelle</string>
     <string name="action_settings">Settings</string>
     <string name="title_section_description">Beschreibung</string>
     <string name="title_section_values">Daten</string>
@@ -9,12 +9,13 @@
     <string name="title_activity_list">Berliner Bade Stellen</string>
     <string name="labelBadeort">Badeort</string>
     <string name="labelBezirk">Bezirk</string>
-    <string name="labelSichtweite_in_cm">Sichtweite in cm</string>
+    <string name="labelSichtweite_in_cm">Sichtweite</string>
     <string name="labelEcoli_100ml">E. Coli Belastung</string>
     <string name="labelEnterokokken_100_ml">Enterokokken Belastung</string>
     <string name="labelLetzteUeberpruefung">letzte Überprüfung</string>
     <string name="action_sort_by_distance">Nach Entfernung sortieren</string>
     <string name="action_sort_alphabetically">Alphabetisch sortieren</string>
     <string name="zeige_artikel_auf_berlin_de">Zeige Artikel auf berlin.de</string>
+    <string name="value_not_available">nicht verfügbar</string>
 
 </resources>
