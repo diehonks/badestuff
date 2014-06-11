@@ -90,17 +90,6 @@ public class DescriptionFragment extends Fragment {
 			TextView date = (TextView) rootView.findViewById(R.id.textLetzteUberprufung);
 			String datum = getArguments().getString(BADE_STELLEN_DATUM);
 			date.setText(datum);
-
-			// set click listener for wiki button to show berlin.de article
-			final String wikiLink = getArguments().getString(BADE_STELLEN_WIKI_LINK);
-			Button showArticleButton = (Button) rootView.findViewById(R.id.buttonShowWikiArticle);
-			showArticleButton.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(wikiLink));
-					startActivity(browserIntent);
-				}
-			});
 			
 			return rootView;
 		}

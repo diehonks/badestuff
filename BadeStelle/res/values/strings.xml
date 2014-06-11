@@ -17,5 +17,6 @@
     <string name="action_sort_alphabetically">Alphabetisch sortieren</string>
     <string name="zeige_artikel_auf_berlin_de">Zeige Artikel auf berlin.de</string>
     <string name="value_not_available">nicht verfügbar</string>
+    <string name="zeige_weg_zur_badestelle">Zeige Weg zur Badestelle</string>
 
 </resources>

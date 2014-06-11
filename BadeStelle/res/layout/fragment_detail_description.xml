@@ -167,19 +167,5 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/buttonShowWikiArticle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/zeige_artikel_auf_berlin_de" />
-
-    </TableRow>
-
 </TableLayout>
 </ScrollView>

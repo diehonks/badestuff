@@ -1,9 +1,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_show_article"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_settings"/>
-
+        android:title="@string/zeige_artikel_auf_berlin_de"/>
+	<item
+        android:id="@+id/action_show_navigation"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/zeige_weg_zur_badestelle"/>
 </menu>

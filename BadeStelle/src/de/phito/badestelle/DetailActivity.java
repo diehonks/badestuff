@@ -2,15 +2,20 @@ package de.phito.badestelle;
 
 import java.text.DateFormat;
 import java.util.Locale;
+import java.util.logging.Logger;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuItem;
 import de.phito.badestelle.detailview.DescriptionFragment;
 import de.phito.badestelle.detailview.MapFragment;
 import de.phito.badestelle.model.BadeStelle;
@@ -39,6 +44,8 @@ public class DetailActivity extends FragmentActivity implements
 	private BadeStelle badeStelle;
 
 	private DateFormat dateFormatter;
+	
+	Logger logger = Logger.getLogger(DetailActivity.class.getSimpleName());
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +93,33 @@ public class DetailActivity extends FragmentActivity implements
 			actionBar.addTab(actionBar.newTab()
 					.setText(mSectionsPagerAdapter.getPageTitle(i))
 					.setTabListener(this));
+		}
+	}
+	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 */
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);		
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(android.view.MenuItem item) {
+		if (item.getItemId() == R.id.action_show_article){
+			// set click listener for wiki button to show berlin.de article
+			Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(this.badeStelle.link.url));
+			startActivity(browserIntent);
+			return true;
+		} else if(item.getItemId() == R.id.action_show_navigation){
+			String naviUrl = "google.navigation:q="+this.badeStelle.coordinates.latitude+","+this.badeStelle.coordinates.longitude;
+			Intent navigationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(naviUrl));
+			startActivity(navigationIntent);
+			return true;
+		} else {
+			return super.onContextItemSelected(item);
 		}
 	}
 
