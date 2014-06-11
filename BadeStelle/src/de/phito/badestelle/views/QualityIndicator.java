@@ -9,9 +9,10 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class QualityIndicator.
+ * 
+ * Zeigt einen Farbigen Kreis, welcher die Qualität des Wassers einer Badestelle indiziert.
  */
 public class QualityIndicator extends View{
 

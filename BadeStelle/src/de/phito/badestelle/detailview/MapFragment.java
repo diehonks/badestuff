@@ -1,6 +1,5 @@
 package de.phito.badestelle.detailview;
 
-import org.osmdroid.api.IGeoPoint;
 import org.osmdroid.api.IMapController;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
@@ -11,7 +10,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import de.phito.badestelle.R;
 
 // TODO: Auto-generated Javadoc
@@ -46,7 +44,8 @@ public class MapFragment extends Fragment {
 			mapView.setTileSource(TileSourceFactory.MAPNIK); 
 			mapView.setBuiltInZoomControls(true); 
 			mapView.setMultiTouchControls(true); 
-			IMapController mapController = mapView.getController();     
+			IMapController mapController = mapView.getController();
+			
 			mapController.setZoom(13);
 			mapController.setCenter(new GeoPoint(lat, lon));
 			

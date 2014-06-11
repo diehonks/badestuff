@@ -1,13 +1,14 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"   
+    	android:paddingBottom="@dimen/activity_vertical_margin"
+    	android:paddingLeft="@dimen/activity_horizontal_margin"
+    	android:paddingRight="@dimen/activity_horizontal_margin"
+    	android:paddingTop="@dimen/activity_vertical_margin"
+    	>
+<TableLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity$DummySectionFragment" >
-
+    android:layout_height="wrap_content">
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="wrap_content"
@@ -17,12 +18,22 @@
             android:id="@+id/textLocationNameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/labelBadeort" />
+            android:text="@string/labelBadeort"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/textLocationName"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
     </TableRow>
 
     <TableRow
@@ -34,12 +45,36 @@
             android:id="@+id/textBezirkLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/labelBezirk" />
+            android:text="@string/labelBezirk"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+             />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/textBezirk"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textSichtweiteLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/labelSichtweite_in_cm"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
     </TableRow>
 
     <TableRow
@@ -48,19 +83,14 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/textSichtweiteLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/labelSichtweite_in_cm" />
-
-        <TextView
             android:id="@+id/textSichtweite"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </TableRow>
 
     <TableRow
-        android:id="@+id/tableRow4"
+        android:id="@+id/tableRow10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
@@ -68,12 +98,22 @@
             android:id="@+id/textEcoliLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/labelEcoli_100ml" />
+            android:text="@string/labelEcoli_100ml"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
 
         <TextView
             android:id="@+id/textEcoli"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </TableRow>
 
     <TableRow
@@ -85,12 +125,21 @@
             android:id="@+id/textEnterokokkenLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/labelEnterokokken_100_ml" />
+            android:text="@string/labelEnterokokken_100_ml"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/textEnterokokken"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
     </TableRow>
 
     <TableRow
@@ -102,12 +151,35 @@
             android:id="@+id/textLetzteUberprufungLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/labelLetzteUeberpruefung" />
+            android:text="@string/labelLetzteUeberpruefung"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/textLetzteUberprufung"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/buttonShowWikiArticle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/zeige_artikel_auf_berlin_de" />
+
     </TableRow>
 
 </TableLayout>
+</ScrollView>

@@ -1,10 +1,14 @@
 package de.phito.badestelle.detailview;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import de.phito.badestelle.R;
 
@@ -16,6 +20,9 @@ public class DescriptionFragment extends Fragment {
 		
 		/** The Constant used in the Bundle BADE_STELLEN_NAME. */
 		public static final String BADE_STELLEN_NAME = "BADE_STELLEN_NAME";
+		
+		/** The Constant used in the Bundle BADE_STELLEN_WIKI_LINK. */
+		public static final String BADE_STELLEN_WIKI_LINK = "BADE_STELLEN_WIKI_LINK";
 		
 		/** The Constant used in the Bundle BADE_STELLEN_BEZIRK. */
 		public static final String BADE_STELLEN_BEZIRK = "BADE_STELLEN_BEZIRK";
@@ -45,6 +52,8 @@ public class DescriptionFragment extends Fragment {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_detail_description, container, false);
+			
+			// set all the text information from the bundle into the layout
 			TextView locationName = (TextView) rootView.findViewById(R.id.textLocationName);
 			locationName.setText(getArguments().getString(BADE_STELLEN_NAME));
 			
@@ -57,15 +66,27 @@ public class DescriptionFragment extends Fragment {
 			
 			TextView ecoli = (TextView) rootView.findViewById(R.id.textEcoli);
 			int ecolivalue = getArguments().getInt(BADE_STELLEN_ECOLI);
-			ecoli.setText(Integer.toString(ecolivalue));
+			ecoli.setText(Integer.toString(ecolivalue)+" / 100 ml");
 			
 			TextView enterokokken = (TextView) rootView.findViewById(R.id.textEnterokokken);
 			int enterokokkenValue = getArguments().getInt(BADE_STELLEN_ENTEROKOKKEN);
-			enterokokken.setText(Integer.toString(enterokokkenValue));
+			enterokokken.setText(Integer.toString(enterokokkenValue)+" / 100 ml");
 			
 			TextView date = (TextView) rootView.findViewById(R.id.textLetzteUberprufung);
 			String datum = getArguments().getString(BADE_STELLEN_DATUM);
 			date.setText(datum);
+
+			// set click listener for wiki button to show berlin.de article
+
+			final String wikiLink = getArguments().getString(BADE_STELLEN_WIKI_LINK);
+			Button showArticleButton = (Button) rootView.findViewById(R.id.buttonShowWikiArticle);
+			showArticleButton.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(wikiLink));
+					startActivity(browserIntent);
+				}
+			});
 			
 			return rootView;
 		}

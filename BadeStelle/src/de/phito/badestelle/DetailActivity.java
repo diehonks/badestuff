@@ -65,13 +65,12 @@ public class DetailActivity extends FragmentActivity implements
 		// When swiping between different sections, select the corresponding
 		// tab. We can also use ActionBar.Tab#select() to do this if we have
 		// a reference to the Tab.
-		mViewPager
-				.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-					@Override
-					public void onPageSelected(int position) {
-						actionBar.setSelectedNavigationItem(position);
-					}
-				});
+		mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+			@Override
+			public void onPageSelected(int position) {
+				actionBar.setSelectedNavigationItem(position);
+			}
+		});
 
 		// For each of the sections in the app, add a tab to the action bar.
 		for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
@@ -119,6 +118,7 @@ public class DetailActivity extends FragmentActivity implements
 			args.putString(DescriptionFragment.BADE_STELLEN_NAME, badeStelle.name);
 			args.putString(DescriptionFragment.BADE_STELLEN_BEZIRK, badeStelle.district);
 			args.putString(DescriptionFragment.BADE_STELLEN_DATUM, badeStelle.lastUpdate.toLocaleString());
+			args.putString(DescriptionFragment.BADE_STELLEN_WIKI_LINK, badeStelle.link.url);
 			args.putInt(DescriptionFragment.BADE_STELLEN_ECOLI, badeStelle.ecoliPerDeciLiter);
 			args.putInt(DescriptionFragment.BADE_STELLEN_ENTEROKOKKEN, badeStelle.enterokokkenPerDeciLiter);
 			args.putInt(DescriptionFragment.BADE_STELLEN_SICHTWEITE, badeStelle.viewDepthCM);

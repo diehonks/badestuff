@@ -4,16 +4,16 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
+
+import android.content.Context;
+import android.content.res.AssetManager;
 
 import com.google.gson.Gson;
 
 import de.phito.badestelle.jsonparser.JSONDefinitions.BadeStellenJSON;
 import de.phito.badestelle.jsonparser.JSONDefinitions.BadeStellenJSONContainer;
-import android.content.Context;
-import android.content.res.AssetManager;
 
 // TODO: Auto-generated Javadoc
 /**

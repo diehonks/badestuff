@@ -10,10 +10,11 @@
     <string name="labelBadeort">Badeort</string>
     <string name="labelBezirk">Bezirk</string>
     <string name="labelSichtweite_in_cm">Sichtweite in cm</string>
-    <string name="labelEcoli_100ml">Ecoli / 100ml</string>
-    <string name="labelEnterokokken_100_ml">Enterokokken / 100 ml</string>
+    <string name="labelEcoli_100ml">E. Coli Belastung</string>
+    <string name="labelEnterokokken_100_ml">Enterokokken Belastung</string>
     <string name="labelLetzteUeberpruefung">letzte Überprüfung</string>
     <string name="action_sort_by_distance">Nach Entfernung sortieren</string>
     <string name="action_sort_alphabetically">Alphabetisch sortieren</string>
+    <string name="zeige_artikel_auf_berlin_de">Zeige Artikel auf berlin.de</string>
 
 </resources>
