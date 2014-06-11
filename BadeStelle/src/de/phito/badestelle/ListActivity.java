@@ -15,9 +15,8 @@ import de.phito.badestelle.listview.ListItemData;
 import de.phito.badestelle.model.BadeStelle;
 import de.phito.badestelle.model.BadeStellenContainer;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class ListActivity.
+ * The Class ListActivity is the main activity used to select one lake from a list.
  */
 public class ListActivity extends Activity {
 

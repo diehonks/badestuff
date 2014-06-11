@@ -10,9 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class ArrayAdapterItem.
+ * The Class BadeStellenListAdapter to populate the list items with badestellen.
  */
 public class BadeStellenListAdapter extends ArrayAdapter<ListItemData> {
 	 

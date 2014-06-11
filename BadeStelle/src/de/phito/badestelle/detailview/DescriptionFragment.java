@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import de.phito.badestelle.R;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class DescriptionFragment creates a view for all the information about the lake
  */

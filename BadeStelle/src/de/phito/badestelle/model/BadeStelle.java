@@ -9,9 +9,8 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import de.phito.badestelle.jsonparser.JSONDefinitions;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class BadeStelle.
+ * The Class BadeStelle contains all the data from one lake.
  */
 @SuppressLint("SimpleDateFormat")
 public class BadeStelle {

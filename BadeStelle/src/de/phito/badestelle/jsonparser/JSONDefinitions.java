@@ -1,6 +1,5 @@
 package de.phito.badestelle.jsonparser;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class JSONDefinitions used by the GSON library, to make the access to the JSON as easy as possible.
  */
