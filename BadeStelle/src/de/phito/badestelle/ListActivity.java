@@ -2,23 +2,18 @@ package de.phito.badestelle;
 
 import java.util.List;
 
-import de.phito.badestelle.listview.BadeStellenListAdapter;
-import de.phito.badestelle.listview.ListItemData;
-import de.phito.badestelle.model.BadeStelle;
-import de.phito.badestelle.model.BadeStellenContainer;
-import android.os.Bundle;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
-import android.view.Menu;
+import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+import de.phito.badestelle.listview.BadeStellenListAdapter;
+import de.phito.badestelle.listview.ListItemData;
+import de.phito.badestelle.model.BadeStelle;
+import de.phito.badestelle.model.BadeStellenContainer;
 
 // TODO: Auto-generated Javadoc
 /**

@@ -15,7 +15,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
-import android.view.MenuItem;
 import de.phito.badestelle.detailview.DescriptionFragment;
 import de.phito.badestelle.detailview.MapFragment;
 import de.phito.badestelle.model.BadeStelle;
