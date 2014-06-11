@@ -12,7 +12,7 @@ import android.view.View;
 /**
  * The Class QualityIndicator.
  * 
- * Zeigt einen Farbigen Kreis, welcher die Qualität des Wassers einer Badestelle indiziert.
+ * Shows a colored circle that indicates the quality of the water of a lake.
  */
 public class QualityIndicator extends View{
 

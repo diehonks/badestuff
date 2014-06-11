@@ -47,7 +47,7 @@ public class ArrayAdapterItem extends ArrayAdapter<ListItemData> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
          if(convertView==null){
-            // inflate the layout
+            // inflate the layout if it wasn't already initialized
             LayoutInflater inflater = ((Activity) mContext).getLayoutInflater();
             convertView = inflater.inflate(layoutResourceId, parent, false);
         }
@@ -57,6 +57,8 @@ public class ArrayAdapterItem extends ArrayAdapter<ListItemData> {
         // save item id as tag in title
         textViewItem.setTag(listItemData.id);
         textViewItem.setText(listItemData.title);
+        
+        // create quality indicator to display the quality of the lake in the list view as colored circle
         QualityIndicator qualityIndicator = (QualityIndicator) convertView.findViewById(R.id.listitem_quality);
         qualityIndicator.setColor(listItemData.color);
  

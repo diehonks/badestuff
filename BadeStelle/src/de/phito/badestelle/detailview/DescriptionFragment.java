@@ -14,7 +14,7 @@ import de.phito.badestelle.R;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class DescriptionFragment.
+ * The Class DescriptionFragment creates a view for all the information about the lake
  */
 public class DescriptionFragment extends Fragment {
 		
@@ -77,7 +77,6 @@ public class DescriptionFragment extends Fragment {
 			date.setText(datum);
 
 			// set click listener for wiki button to show berlin.de article
-
 			final String wikiLink = getArguments().getString(BADE_STELLEN_WIKI_LINK);
 			Button showArticleButton = (Button) rootView.findViewById(R.id.buttonShowWikiArticle);
 			showArticleButton.setOnClickListener(new OnClickListener() {

@@ -1,8 +1,8 @@
 package de.phito.badestelle.model;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Coordinates.
+ * Parses the coordinates from the json and keeps latitude and longitude as doubles.
  */
 public class Coordinates {
 	

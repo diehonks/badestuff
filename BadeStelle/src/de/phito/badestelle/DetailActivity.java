@@ -1,5 +1,6 @@
 package de.phito.badestelle;
 
+import java.text.DateFormat;
 import java.util.Locale;
 
 import android.app.ActionBar;
@@ -10,7 +11,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.Menu;
 import de.phito.badestelle.detailview.DescriptionFragment;
 import de.phito.badestelle.detailview.MapFragment;
 import de.phito.badestelle.model.BadeStelle;
@@ -38,11 +38,15 @@ public class DetailActivity extends FragmentActivity implements
 
 	private BadeStelle badeStelle;
 
+	private DateFormat dateFormatter;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		// used later to format the dates inside the fragment correctly according to the locale
+		this.dateFormatter = android.text.format.DateFormat.getDateFormat(getApplicationContext());
 		Integer badeStellenId = getIntent().getIntExtra(DetailActivity.SHOW_DETAIL_ID, 0);
 		
 		BadeStellenContainer badeStellen = BadeStellenContainer.getInstance();
@@ -114,34 +118,34 @@ public class DetailActivity extends FragmentActivity implements
 
 		@Override
 		public Fragment getItem(int position) {
-			Bundle args = new Bundle();
-			args.putString(DescriptionFragment.BADE_STELLEN_NAME, badeStelle.name);
-			args.putString(DescriptionFragment.BADE_STELLEN_BEZIRK, badeStelle.district);
-			args.putString(DescriptionFragment.BADE_STELLEN_DATUM, badeStelle.lastUpdate.toLocaleString());
-			args.putString(DescriptionFragment.BADE_STELLEN_WIKI_LINK, badeStelle.link.url);
-			args.putInt(DescriptionFragment.BADE_STELLEN_ECOLI, badeStelle.ecoliPerDeciLiter);
-			args.putInt(DescriptionFragment.BADE_STELLEN_ENTEROKOKKEN, badeStelle.enterokokkenPerDeciLiter);
-			args.putInt(DescriptionFragment.BADE_STELLEN_SICHTWEITE, badeStelle.viewDepthCM);
-			args.putDouble(MapFragment.BADE_STELLEN_COORDINATES_LAT, badeStelle.coordinates.latitude);
-			args.putDouble(MapFragment.BADE_STELLEN_COORDINATES_LON, badeStelle.coordinates.longitude);
+			// create bundle that is used to show the details of a lake inside the fragment views 
+			Bundle detailBundle = new Bundle();
+			detailBundle.putString(DescriptionFragment.BADE_STELLEN_NAME, badeStelle.name);
+			detailBundle.putString(DescriptionFragment.BADE_STELLEN_BEZIRK, badeStelle.district);
+			detailBundle.putString(DescriptionFragment.BADE_STELLEN_DATUM, dateFormatter.format(badeStelle.lastUpdate));
+			detailBundle.putString(DescriptionFragment.BADE_STELLEN_WIKI_LINK, badeStelle.link.url);
+			detailBundle.putInt(DescriptionFragment.BADE_STELLEN_ECOLI, badeStelle.ecoliPerDeciLiter);
+			detailBundle.putInt(DescriptionFragment.BADE_STELLEN_ENTEROKOKKEN, badeStelle.enterokokkenPerDeciLiter);
+			detailBundle.putInt(DescriptionFragment.BADE_STELLEN_SICHTWEITE, badeStelle.viewDepthCM);
+			detailBundle.putDouble(MapFragment.BADE_STELLEN_COORDINATES_LAT, badeStelle.coordinates.latitude);
+			detailBundle.putDouble(MapFragment.BADE_STELLEN_COORDINATES_LON, badeStelle.coordinates.longitude);
 			
 			if(position == 0){
-				// Beschreibung
+				// description
 				Fragment fragment = new DescriptionFragment();
-				fragment.setArguments(args);
+				fragment.setArguments(detailBundle);
 				return fragment;
-			} else {
-				// pos == 2
-				// Karte
+			} else { // pos == 1
+				// map
 				Fragment fragment = new MapFragment();
-				fragment.setArguments(args);
+				fragment.setArguments(detailBundle);
 				return fragment;
 			}
 		}
 
 		@Override
 		public int getCount() {
-			// Beschreibung und Karte
+			// description tab and map tab
 			return 2;
 		}
 

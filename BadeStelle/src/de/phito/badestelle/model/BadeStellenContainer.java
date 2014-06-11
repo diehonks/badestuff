@@ -15,9 +15,8 @@ import com.google.gson.Gson;
 import de.phito.badestelle.jsonparser.JSONDefinitions.BadeStellenJSON;
 import de.phito.badestelle.jsonparser.JSONDefinitions.BadeStellenJSONContainer;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class BadeStellenContainer.
+ * The Class BadeStellenContainer. Singleton class to hold the information read from the JSON file.
  */
 public class BadeStellenContainer {
 	
@@ -95,7 +94,7 @@ public class BadeStellenContainer {
 	}
 	
 	/**
-	 * Load bade stellen json.
+	 * Load bade stellen json from file, parse and save it.
 	 *
 	 * @param context the context
 	 */

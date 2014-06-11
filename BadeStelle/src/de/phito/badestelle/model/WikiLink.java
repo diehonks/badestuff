@@ -1,9 +1,8 @@
 package de.phito.badestelle.model;
 
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class WikiLink.
+ * The Class WikiLink holds title and URL of a Wiki link contained in the JSON.
  */
 public class WikiLink{
 	
@@ -25,7 +24,7 @@ public class WikiLink{
 	}
 	
 	/**
-	 * Parses the from string.
+	 * Parses the wiki url from string inside the JSON.
      *
 	 * links are in this wiki format
 	 * "[[/badegewaesser/badestellen/alterhof.html|Alter Hof]]"
@@ -33,8 +32,8 @@ public class WikiLink{
 	 * e.g. link: http://www.berlin.de/badegewaesser/badestellen/alterhof.html
 	 * title: Alter Hof
 	 *
-	 * @param wikiLink the wiki link
-	 * @return the wiki link
+	 * @param wikiLink the wiki link as string
+	 * @return the http link and title as WikiLink
 	 */
 	public static WikiLink parseFromString(String wikiLink){
 
