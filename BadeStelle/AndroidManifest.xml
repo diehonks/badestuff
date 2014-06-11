@@ -22,7 +22,13 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="de.phito.badestelle.DetailActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:parentActivityName="de.phito.badestelle.ListActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+            	android:value="de.phito.badestelle.ListActivity" />
+            
         </activity>
         <activity
             android:name="de.phito.badestelle.ListActivity"
