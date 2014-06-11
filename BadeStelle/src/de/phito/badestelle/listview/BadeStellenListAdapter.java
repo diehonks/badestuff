@@ -14,7 +14,7 @@ import android.widget.TextView;
 /**
  * The Class ArrayAdapterItem.
  */
-public class ArrayAdapterItem extends ArrayAdapter<ListItemData> {
+public class BadeStellenListAdapter extends ArrayAdapter<ListItemData> {
 	 
     /** The m context. */
     Context mContext;
@@ -32,7 +32,7 @@ public class ArrayAdapterItem extends ArrayAdapter<ListItemData> {
      * @param layoutResourceId the layout resource id
      * @param data the data
      */
-    public ArrayAdapterItem(Context mContext, int layoutResourceId, ListItemData[] data) {
+    public BadeStellenListAdapter(Context mContext, int layoutResourceId, ListItemData[] data) {
  
         super(mContext, layoutResourceId, data);
  

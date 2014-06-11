@@ -2,7 +2,7 @@ package de.phito.badestelle;
 
 import java.util.List;
 
-import de.phito.badestelle.listview.ArrayAdapterItem;
+import de.phito.badestelle.listview.BadeStellenListAdapter;
 import de.phito.badestelle.listview.ListItemData;
 import de.phito.badestelle.model.BadeStelle;
 import de.phito.badestelle.model.BadeStellenContainer;
@@ -26,7 +26,7 @@ import android.widget.Toast;
  */
 public class ListActivity extends Activity {
 
-	/** The bade stellen. */
+	/** The bade stellen container, which is able to load and parse the JSON. */
 	private BadeStellenContainer badeStellen;
 
 	/* (non-Javadoc)
@@ -37,40 +37,32 @@ public class ListActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
 		
+		// load badestellen from file
 		badeStellen = BadeStellenContainer.getInstance();
 		badeStellen.loadBadeStellenJSON(getApplicationContext());
 		
+		// create model list items that can later be used to fill the inflated views with data
 		List<BadeStelle> badeStellenList = badeStellen.getBadestellen();
 		ListItemData[] listItems = new ListItemData[badeStellenList.size()];
 		for(int i=0; i<badeStellenList.size(); i++){
 			BadeStelle bs = badeStellenList.get(i);
 			listItems[i] = new ListItemData(bs.id, bs.name, bs.statusColor);
 		}
+		BadeStellenListAdapter adapter = new BadeStellenListAdapter(this, R.layout.listview_badesee_item, listItems);
 		
+		// set model for list view and use the tag of the list items to create a simple on click listener 
 		ListView badeSeeList = (ListView) findViewById(R.id.listBadeSeen);
-		ArrayAdapterItem adapter = new ArrayAdapterItem(this, R.layout.listview_badesee_item, listItems);
 		badeSeeList.setAdapter(adapter);
 		badeSeeList.setOnItemClickListener(new OnItemClickListener(){
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				TextView textView = (TextView) view.findViewById(R.id.listitem_texttitle);
-				Integer itemid = (Integer) textView.getTag();
-				Intent intent = new Intent(getBaseContext(), DetailActivity.class);
-				intent.putExtra(DetailActivity.SHOW_DETAIL_ID, itemid);
-				startActivity(intent);
-			};
-		}
+				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+					TextView textView = (TextView) view.findViewById(R.id.listitem_texttitle);
+					Integer itemid = (Integer) textView.getTag();
+					Intent intent = new Intent(getBaseContext(), DetailActivity.class);
+					intent.putExtra(DetailActivity.SHOW_DETAIL_ID, itemid);
+					startActivity(intent);
+				};
+			}
 		);
 		
 	}
-
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
-	 */
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.list, menu);
-		return true;
-	}
-
 }

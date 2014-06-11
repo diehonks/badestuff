@@ -2,7 +2,7 @@ package de.phito.badestelle.jsonparser;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class JSONDefinitions.
+ * The Class JSONDefinitions used by the GSON library, to make the access to the JSON as easy as possible.
  */
 public class JSONDefinitions {
 	
@@ -52,7 +52,7 @@ public class JSONDefinitions {
 	}
 	
 	/**
-	 * The Class BadeStellenJSONContainer.
+	 * The Class BadeStellenJSONContainer is a wrapper for the JSON list items.
 	 */
 	public class BadeStellenJSONContainer{
 		
