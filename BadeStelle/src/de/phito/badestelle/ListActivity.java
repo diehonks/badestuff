@@ -52,10 +52,8 @@ public class ListActivity extends Activity {
 		badeSeeList.setAdapter(adapter);
 		badeSeeList.setOnItemClickListener(new OnItemClickListener(){
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				Context context = view.getContext();
 				TextView textView = (TextView) view.findViewById(R.id.listitem_texttitle);
 				Integer itemid = (Integer) textView.getTag();
-				Toast.makeText(context, "Item ID: " + itemid, Toast.LENGTH_SHORT).show();
 				Intent intent = new Intent(getBaseContext(), DetailActivity.class);
 				intent.putExtra(DetailActivity.SHOW_DETAIL_ID, itemid);
 				startActivity(intent);
