@@ -6,7 +6,7 @@
     <string name="title_section_description">Beschreibung</string>
     <string name="title_section_values">Daten</string>
     <string name="title_section_map">Karte</string>
-    <string name="title_activity_list">ListActivity</string>
+    <string name="title_activity_list">Berliner Bade Stellen</string>
     <string name="hello_world">Hello world!</string>
 
 </resources>
