@@ -7,6 +7,11 @@
     <string name="title_section_values">Daten</string>
     <string name="title_section_map">Karte</string>
     <string name="title_activity_list">Berliner Bade Stellen</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="labelBadeort">Badeort</string>
+    <string name="labelBezirk">Bezirk</string>
+    <string name="labelSichtweite_in_cm">Sichtweite in cm</string>
+    <string name="labelEcoli_100ml">Ecoli / 100ml</string>
+    <string name="labelEnterokokken_100_ml">Enterokokken / 100 ml</string>
+    <string name="labelLetzteUeberpruefung">letzte Überprüfung</string>
 
 </resources>

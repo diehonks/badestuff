@@ -2,7 +2,6 @@ package de.phito.badestelle;
 
 import java.util.Locale;
 
-import de.phito.badestelle.detailview.DataFragment;
 import de.phito.badestelle.detailview.DescriptionFragment;
 import de.phito.badestelle.detailview.MapFragment;
 import de.phito.badestelle.model.BadeStelle;
@@ -130,25 +129,21 @@ public class DetailActivity extends FragmentActivity implements
 			Bundle args = new Bundle();
 			args.putString(DescriptionFragment.BADE_STELLEN_NAME, badeStelle.name);
 			args.putString(DescriptionFragment.BADE_STELLEN_BEZIRK, badeStelle.district);
-			args.putString(DataFragment.BADE_STELLEN_DATUM, badeStelle.lastUpdate.toLocaleString());
-			args.putInt(DataFragment.BADE_STELLEN_ECOLI, badeStelle.ecoliPerDeciLiter);
-			args.putInt(DataFragment.BADE_STELLEN_ENTEROKOKKEN, badeStelle.enterokokkenPerDeciLiter);
-			args.putInt(DataFragment.BADE_STELLEN_SICHTWEITE, badeStelle.viewDepthCM);
+			args.putString(DescriptionFragment.BADE_STELLEN_DATUM, badeStelle.lastUpdate.toLocaleString());
+			args.putInt(DescriptionFragment.BADE_STELLEN_ECOLI, badeStelle.ecoliPerDeciLiter);
+			args.putInt(DescriptionFragment.BADE_STELLEN_ENTEROKOKKEN, badeStelle.enterokokkenPerDeciLiter);
+			args.putInt(DescriptionFragment.BADE_STELLEN_SICHTWEITE, badeStelle.viewDepthCM);
 			args.putDouble(MapFragment.BADE_STELLEN_COORDINATES_LAT, badeStelle.coordinates.latitude);
 			args.putDouble(MapFragment.BADE_STELLEN_COORDINATES_LON, badeStelle.coordinates.longitude);
 			
 			if(position == 0){
+				// Beschreibung
 				Fragment fragment = new DescriptionFragment();
 				fragment.setArguments(args);
 				return fragment;
-			} else if(position == 1){
-				// data
-				Fragment fragment = new DataFragment();
-				fragment.setArguments(args);
-				return fragment; 
 			} else {
 				// pos == 2
-				// map
+				// Karte
 				Fragment fragment = new MapFragment();
 				fragment.setArguments(args);
 				return fragment;
@@ -157,8 +152,8 @@ public class DetailActivity extends FragmentActivity implements
 
 		@Override
 		public int getCount() {
-			// Show 3 total pages.
-			return 3;
+			// Beschreibung und Karte
+			return 2;
 		}
 
 		@Override
@@ -168,9 +163,7 @@ public class DetailActivity extends FragmentActivity implements
 			case 0:
 				return getString(R.string.title_section_description).toUpperCase(l);
 			case 1:
-				return getString(R.string.title_section_values).toUpperCase(l);
-			case 2:
-				return getString(R.string.title_section_map).toUpperCase(l);
+				return getString(R.string.title_section_map).toUpperCase(l);				
 			}
 			return null;
 		}

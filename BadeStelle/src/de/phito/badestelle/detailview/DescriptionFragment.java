@@ -14,11 +14,23 @@ import de.phito.badestelle.R;
  */
 public class DescriptionFragment extends Fragment {
 		
-		/** The Constant BADE_STELLEN_NAME. */
+		/** The Constant used in the Bundle BADE_STELLEN_NAME. */
 		public static final String BADE_STELLEN_NAME = "BADE_STELLEN_NAME";
 		
-		/** The Constant BADE_STELLEN_BEZIRK. */
+		/** The Constant used in the Bundle BADE_STELLEN_BEZIRK. */
 		public static final String BADE_STELLEN_BEZIRK = "BADE_STELLEN_BEZIRK";
+		
+		/** The Constant used in the Bundle BADE_STELLEN_SICHTWEITE. */
+		public static final String BADE_STELLEN_SICHTWEITE = "BADE_STELLEN_SICHTWEITE";
+		
+		/** The Constant used in the Bundle BADE_STELLEN_ECOLI. */
+		public static final String BADE_STELLEN_ECOLI = "BADE_STELLEN_ECOLI";
+		
+		/** The Constant used in the Bundle BADE_STELLEN_ENTEROKOKKEN. */
+		public static final String BADE_STELLEN_ENTEROKOKKEN= "BADE_STELLEN_ENTEROKOKKEN";
+		
+		/** The Constant used in the Bundle BADE_STELLEN_DATUM. */
+		public static final String BADE_STELLEN_DATUM = "BADE_STELLEN_DATUM";
 
 		/**
 		 * Instantiates a new description fragment.
@@ -38,6 +50,23 @@ public class DescriptionFragment extends Fragment {
 			
 			TextView districtName = (TextView) rootView.findViewById(R.id.textBezirk);
 			districtName.setText(getArguments().getString(BADE_STELLEN_BEZIRK));
+			
+			TextView sichtweite = (TextView) rootView.findViewById(R.id.textSichtweite);
+			int sichtweiteValue = getArguments().getInt(BADE_STELLEN_SICHTWEITE);
+			sichtweite.setText(Integer.toString(sichtweiteValue));
+			
+			TextView ecoli = (TextView) rootView.findViewById(R.id.textEcoli);
+			int ecolivalue = getArguments().getInt(BADE_STELLEN_ECOLI);
+			ecoli.setText(Integer.toString(ecolivalue));
+			
+			TextView enterokokken = (TextView) rootView.findViewById(R.id.textEnterokokken);
+			int enterokokkenValue = getArguments().getInt(BADE_STELLEN_ENTEROKOKKEN);
+			enterokokken.setText(Integer.toString(enterokokkenValue));
+			
+			TextView date = (TextView) rootView.findViewById(R.id.textLetzteUberprufung);
+			String datum = getArguments().getString(BADE_STELLEN_DATUM);
+			date.setText(datum);
+			
 			return rootView;
 		}
 }
